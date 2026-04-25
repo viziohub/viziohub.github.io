@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vizio Setup Guide</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#000;
+  color:#fff;
+}
+
+/* .logo{
+  font-size:22px;
+  font-weight:bold;
+} */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#fe3c3c;
+}
+
+/* HERO SECTION */
+.hero{
+  height:90vh;
+  background:url('img1.jpg') no-repeat center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#ff0000;
+  position:relative;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:15px;
+  font-weight:bold;
+}
+
+.hero p{
+  font-size:25px;
+  margin-bottom:20px;
+  color: #fff;
+}
+
+.btn{
+  padding:12px 25px;
+  background:#f00a0a;
+  color:#fff;
+  border:none;
+  text-decoration:none;
+  font-size:16px;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#000000;
+}
+
+/* CONTENT
+.container{
+  padding:40px;
+  max-width:1000px;
+  margin:auto;
+} */
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 15px;
+}
+
+/* STEP CARD */
+.step-card{
+  background:#fff;
+  border-radius:15px;
+  padding:25px;
+  margin-bottom:25px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+  transition: all 0.35s ease;
+}
+
+/* HOVER EFFECT */
+.step-card:hover{
+  transform: translateY(-10px) scale(1.01);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* HEADING */
+.step-card h2{
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+/* HOVER HEADING COLOR */
+.step-card:hover h2{
+  color:#00bcd4;
+}
+
+/* TEXT */
+.step-card p{
+  margin-bottom:10px;
+  color:#555;
+}
+
+.step-card ul{
+  margin-left:20px;
+  color:#555;
+  line-height:1.6;
+}
+
+
+.step-images{
+  display:flex;
+  text-align: center;
+  gap:20px;
+  margin:15px 0;
+  flex-wrap:wrap;
+}
+
+.step-images img{
+  width:48%;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.step-images img:hover{
+  transform:scale(1.05);
+}
+h2{
+  margin-top:25px;
+  margin-bottom:10px;
+  color:#333;
+}
+
+p, li{
+  color:#555;
+  line-height:1.7;
+}
+
+ul{
+  margin-left:20px;
+}
+
+
+/* FAQ SECTION */
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FAQ BOX */
+.faq-item {
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  padding: 18px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #1e3a8a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: #e0f2fe;
+}
+
+.icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #374151;
+  line-height: 1.5;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 15px 20px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+
+/* FOOTER */ 
+/* .footer{ text-align:center; 
+    padding:20px; 
+    background:#000;
+     color:#fff; 
+     margin-top:40px; } */
+.footer {
+    background: #000000;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 14px;
+    position: relative;
+    border-top: 1px solid #334155;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <!-- <div class="logo">VIZIO SETUP</div> -->
+  <div class="logo">
+  <img src="logo.png" alt="Vizio Logo">
+  <span>VIZIO SETUP</span>
+</div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#FAQ">FAQ</a>
+  </div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-content">
+    <h1><b>How to Activate Your TV at vizio.com/setup</b></h1>
+    <p>To activate at <b>vizio.com/setup</b> you only need a few simple steps and a working internet connection. 
+        Whether your VIZIO Smart TV is brand new or recently reset, this guide will help you complete 
+        the activation process quickly and correctly.</p>
+    <a href="#" class="btn">Start Setup</a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <h1><b>How Does vizio.com/setup Work?</b></h1>
+  <p>The <b>vizio.com/setup</b> process works by securely linking your VIZIO Smart TV to your online account using a temporary activation code. THis ensure that only you can activate and control your TV..</p>
+
+  
+
+<!-- IMAESSSSSS PUTING HERERE -->
+
+<div class="step-card">
+
+  <!-- <div class="step-images">
+    <a href="image1.jpg" target="_blank">
+      <img src="image1.jpg" alt="TV Setup Screen">
+    </a>
+    <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a>
+  </div> -->
+
+  <h2>1. TV Generates a Unique Code</h2>
+  <p>When you turn on your VIZIO TV and connect it to Wi-Fi</p>
+
+  <ul>
+    <li>The TV automatically generates a Unique activation code.</li>
+    <li>This code is temporary and expires after a short times</li>
+    <li>Its acts like a pairing key between your TV and your account</li>
+  </ul>
+<!-- <div class="step-card"> -->
+
+  <div class="step-images">
+    <a href="img2.jpeg" target="_blank">
+      <img src="img2.jpeg" alt="TV Setup Screen">
+    </a>
+    <!-- <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a> -->
+  </div>
+</div>
+
+
+<div class="step-card">
+
+  
+    <!-- <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a> 
+  </div>-->
+
+  <h2>2. Enter Code at vizio.com/setup</h2>
+  <p>On your phone number or computer</p>
+  <ul>
+    <li>Go to vizio.com/setup</li>
+    <li>Enter the code shown on TV</li>
+    <li>Click Continue</li>
+  </ul>
+  <p>THis tells VIZIO's system which device you're trying to activate.</p>
+
+<div class="step-images">
+    <a href="img3.jpeg" target="_blank">
+      <img src="img3.jpeg" alt="TV Setup Screen">
+    </a>
+</div>
+</div>
+
+ 
+
+<div class="step-card">
+
+  <!-- <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a>
+  </div> -->
+
+ <h2>3. Account Verification</h2>
+ <p>Next, the syytem confirm your identity:</p>
+  <ul>
+    <li>You log in to your VIZIO account</li>
+    <li>Or create a new account</li>
+    <li>SOmetimes s PIN/OTP Verification is requireed</li>
+  </ul>
+  <p>Thsi steps keeps your device secure</p>
+
+  <div class="step-images">
+    <a href="img4.jpeg" target="_blank">
+      <img src="img4.jpeg" alt="TV Setup Screen">
+    </a>
+  </div>
+</div>
+
+
+<div class="step-card">
+
+  <!-- 
+    <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a>
+  </div> -->
+
+ <h2>4. TV Gets Linked to Your Account</h2>
+ <p>Once verified:</p>
+  <ul>
+    <li>Your TV is linked to your VIZIO account</li>
+    <li>Apps and preferences are synced</li>
+    <li>The setup process completes automatically</li>
+  </ul>
+  <div class="step-images">
+    <a href="img5.jpeg" target="_blank">
+      <img src="img5.jpeg" alt="TV Setup Screen">
+    </a>
+ </div>
+</div>
+
+
+  
+<div class="step-card">
+
+  <!-- 
+    <a href="image2.jpg" target="_blank">
+      <img src="image2.jpg" alt="Activation Code Screen">
+    </a>
+  </div> -->
+
+ <h2>5. Activation Complete</h2>
+ <p>Now your TV is ready:</p>
+  <ul>
+    <li>Access streaming apps</li>
+    <li>Install new apps</li>
+    <li>Start watching</li>
+  </ul>
+  <div class="step-images">
+    <a href="img6.jpeg" target="_blank">
+      <img src="img6.jpeg" alt="TV Setup Screen">
+    </a>
+    </div>
+</div>
+
+
+<!-- 
+  <h2><b>Why This System is Used?</b></h2>
+  <ul>
+    <li>Keeps device secure</li>
+    <li>Faster setup</li>
+    <li>No typing on TV</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Activating your TV at <b>vizio.com/setup</b> is simple, fast, and user-friendly. By following the correct steps—entering your code, logging in, and verifying your account—you can complete the setup in just a few minutes.
+Make sure to use the official website, keep your login details secure, and enjoy a smooth streaming experience on your VIZIO Smart TV.
+
+</p>
+
+</div> -->
+
+
+<!-- FAQ SECTION -->
+<div class="faq-section" id="FAQ"> 
+
+  <h2><b>Frequently Asked Question?</b></h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is vizio.com/setup?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <b>vizio.com/setup</b> is the official activation page used to set up and register your Vizio Smart TV, connect it it Wi-Fi, and enable SmartCast features.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How so I set up my VIZIO TV for the first time?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Turn on your Vizio TV and follow the on-screen instruction. Connect to Wi-Fi, sign in, and enter the setup code at vizio.com/setup.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+        How to setup VIZIO TV with WI-fi?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Go to Network Settings on your TV and select your Wi-Fi network.
+Enter the password and wait for the connection to be confirmed
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Why is my  VIZIO TV not connecting?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+     This can happen due to weak internet, wrong password, or router issues.
+Restart your TV and router, then try connecting again.
+
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+     How do i get my vizio tv back to regular tv?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Press the Input or Source button on your remote.
+Select “TV” or “Antenna” to switch back to normal channels.
+    </div>
+  </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     How so i set up a Vizio mobile account?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Go to the Vizio website or app and click on Sign Up.
+Enter your details, verify your email, and create your account.
+
+    </div>
+  </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+   Where can i Find my vizio TV Name?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+     Go to Settings → System → System Information on your TV.
+There you will see your TV name and model details.
+    </div>
+  </div>
+
+
+ <div class="faq-item">
+    <div class="faq-question">
+    How do i pair my vizio smart tv?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+     Turn on Bluetooth or SmartCast on your TV and open the app on your phone.
+Select your TV from the list and confirm pairing.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+    How do I fix an invalid or expired setup code?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+     Restart your TV or refresh the setup screen to generate a new code, then try again
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+    Can I skip Vizio setup and use HDMI only?
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+    Yes, but you may miss Smart TV features like apps, casting, and updates.
+    </div>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<!-- <div class="footer">
+  <p>© 2026 Vizio Setup Guide | All Rights Reserved</p>
+</div> -->
+
+<div class="footer">
+  © 2026 VIZIO Setup Guide | All Rights Reserved
+</div>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+
+    faqItems.forEach(i => {
+      if(i !== item) i.classList.remove("active");
+    });
+
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
